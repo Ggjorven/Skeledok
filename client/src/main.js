@@ -1,7 +1,8 @@
-import * as Cesium from "cesium";
-import "cesium/Build/Cesium/Widgets/widgets.css";
-
-window.onload = setup;
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setup, { once: true });
+} else {
+    setup();
+}
 
 var measure;
 var viewer;
