@@ -34,7 +34,8 @@
 **/nbdist/
 **/.nb-gradle/
 
-# TODO: HTML/Fronted related .gitignore
+# Node
+**/node_modules/
 
 # VS Code
 **/.vscode/

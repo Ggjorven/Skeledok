@@ -19,6 +19,7 @@
 
 Ensure you have the following installed on your system:
 - Runtime: [Java JDK 21](./doc/Java-21-help.md)
+- Client tooling: [Node.js](./doc/Node-help.md)
 - Repository cloned (`git clone https://github.com/Ggjorven/Skeledok.git`)
 
 ### Building, Testing & Running
@@ -28,9 +29,9 @@ The tool is split into a [client](./client/) and a [server](./server/). Build in
 - Server - [SERVER.md](./doc/SERVER.md)
 
 Supported platforms are:
-- **Windows**: IntelliJ, Eclipse, Gradle
-- **Linux**: IntelliJ, Gradle
-- **MacOS**: IntelliJ, Gradle
+- **Windows**
+- **Linux**
+- **MacOS**
 
 ## License
 
