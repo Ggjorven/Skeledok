@@ -39,7 +39,7 @@ function setup() {
 
     // console.log(viewer.scene.globe.maximumScreenSpaceError);
 
-    const condo1 = createBox(200, 300, 50, 40, 70, 0, "building_tex.jpg");
+    const condo1 = createBox(200, 300, 50, 40, 70, 0, "resources/textures/building_tex.jpg");
     measure = createBox(0, 0, 3, 3, 30, 0, Cesium.Color.RED);
 
     var carX = 230;
