@@ -52,7 +52,7 @@ jobs:
 
       - name: Install ESLint
         run: npm install --save-dev eslint @eslint/js globals @microsoft/eslint-formatter-sarif
-        working-directory: web
+        working-directory: client
 
       - name: Run ESLint
         id: lint-job
