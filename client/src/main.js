@@ -81,9 +81,9 @@ function setup() {
         },
     });
 
-    createModel("Cesium_Man.glb", latlonFromXY(220, 70), 0);
+    createModel("resources/models/Cesium_Man.glb", latlonFromXY(220, 70), 0);
 
-    createModel("strange_building.glb", latlonFromXY(240, 70), 0);
+    createModel("resources/models/strange_building.glb", latlonFromXY(240, 70), 0);
 
     setupInputActions();
 }
