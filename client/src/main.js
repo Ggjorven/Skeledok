@@ -1,11 +1,7 @@
 import * as Cesium from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setup, { once: true });
-} else {
-    setup();
-}
+window.onload = setup;
 
 var measure;
 var viewer;
