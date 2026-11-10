@@ -22,7 +22,11 @@ Ensure you have the following installed on your system:
 
 ### Building, Testing & Running
 
-Build and run instructions for this project can be found in the [BUILDING.md](BUILDING.md) file. Supported platforms are:
+The tool is split into a [client](./client/) and a [server](./server/). Build instructions can be found below:
+- Client - [CLIENT.md](./doc/CLIENT.md)
+- Server - [SERVER.md](./doc/SERVER.md)
+
+Supported platforms are:
 - **Windows**: IntelliJ, Eclipse, Gradle
 - **Linux**: IntelliJ, Gradle
 - **MacOS**: IntelliJ, Gradle
