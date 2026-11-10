@@ -1,5 +1,7 @@
 # Build & Run instructions for Server
 
+The server is a Spring Boot application.
+
 ## Prerequisites
 
 1. Open a terminal in the root of the cloned **Skeledok** directory.
