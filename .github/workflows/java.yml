@@ -4,10 +4,12 @@ on:
   push:
     branches: [ "main", "dev", "feature/**", "fix/**" ]
     paths:
+      - .github/workflows/java.yml
       - server/**
   pull_request:
     branches: [ "main", "dev" ]
     paths:
+      - .github/workflows/java.yml
       - server/**
 
 jobs:
