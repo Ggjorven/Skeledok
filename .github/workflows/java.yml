@@ -3,8 +3,12 @@ name: Java
 on:
   push:
     branches: [ "main", "dev", "feature/**", "fix/**" ]
+    paths:
+      - server/**
   pull_request:
     branches: [ "main", "dev" ]
+    paths:
+      - server/**
 
 jobs:
   lint-codeql:
