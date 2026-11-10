@@ -1,23 +1,24 @@
-# Title
+# TITLE
 
 ## Checklist before merge
 
 **Developer's responsibilities**
 
-- [ ] Build succeeds (`gradlew build`)
-- [ ] All tests pass (`gradlew test`)
-- [ ] Add related documentation
-- [ ] Add related tests
+- [ ] Build succeeds
+  - [ ] Client (`npm run build`)
+  - [ ] Server (`gradlew build`)
+- [ ] All tests pass:
+  - [ ] Server (`gradlew test`)
 
 ## Changes
 
-- Change 1
-- Change 2
+- CHANGE 1
+- CHANGE 2
 
 ## Related PRs
 
-#X, #X
+#X, #Y
 
 ## Related issues
 
-Closes: #X, #X
+Closes: #X
