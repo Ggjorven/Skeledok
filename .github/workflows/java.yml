@@ -74,7 +74,8 @@ jobs:
       uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
 
     - name: Build
-      run: cd server && ./gradlew build
+      run: ./gradlew build
+      working-directory: server
 
   test:
     name: Test
@@ -95,4 +96,5 @@ jobs:
       uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
 
     - name: Test
-      run: cd server && ./gradlew test
+      run: ./gradlew test
+      working-directory: server
