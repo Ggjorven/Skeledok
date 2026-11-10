@@ -3,7 +3,7 @@ import "cesium/Build/Cesium/Widgets/widgets.css";
 
 window.onload = setup;
 
-var measure;
+var _measure;
 var viewer;
 
 function setup() {
@@ -42,8 +42,8 @@ function setup() {
 
     // console.log(viewer.scene.globe.maximumScreenSpaceError);
 
-    const condo1 = createBox(200, 300, 50, 40, 70, 0, "resources/textures/building_tex.jpg");
-    measure = createBox(0, 0, 3, 3, 30, 0, Cesium.Color.RED);
+    const _condo1 = createBox(200, 300, 50, 40, 70, 0, "resources/textures/building_tex.jpg");
+    _measure = createBox(0, 0, 3, 3, 30, 0, Cesium.Color.RED);
 
     var carX = 230;
     var carY = 78;
@@ -68,7 +68,7 @@ function setup() {
         [520, 175] //midden-links-onder
     ], Cesium.Color.WHITE);
 
-    const redPolygon = viewer.entities.add({
+    const _redPolygon = viewer.entities.add({
         name: "Spoordok",
         polygon: {
             hierarchy: Cesium.Cartesian3.fromDegreesArray([
@@ -202,7 +202,7 @@ function setupInputActions() {
         activeShape = undefined;
         activeShapePoints = [];
     }
-    handler.setInputAction(function (event) {
+    handler.setInputAction(function (_event) {
         terminateShape();
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
 }
@@ -255,6 +255,7 @@ function createBoxLatLon(cords, width, depth, height, rotation, color) {
     });
 }
 
+/*
 function createBoxXYZ(position, width, depth, height, rotation, color) {
     return viewer.entities.add({
         name: "Box_" + _box++,
@@ -266,6 +267,7 @@ function createBoxXYZ(position, width, depth, height, rotation, color) {
         }
     });
 }
+*/
 
 function moveEntity(entity, x, y) {
     const cords = latlonFromXY(x, y);
@@ -282,7 +284,7 @@ function createPolygonFromXYs(xyArray, color) {
         degreeArray.push(cords.lon);
     });
 
-    const redPolygon = viewer.entities.add({
+    const _redPolygon = viewer.entities.add({
         name: "Polygon_" + _polygon++,
         polygon: {
             hierarchy: Cesium.Cartesian3.fromDegreesArray(degreeArray),
@@ -327,6 +329,7 @@ function createModel(url, position, height) {
     viewer.trackedEntity = entity;
 }
 
+/*
 // Function to convert Cartesian coordinates to latitude and longitude
 function cartesianToLatLon(cartesianPosition) {
     const cartographic = Cesium.Cartographic.fromCartesian(cartesianPosition);
@@ -360,6 +363,7 @@ function handleMouseClick(event) {
         createBoxXYZ(snappedPosition, 1, 1, 1, 0, Cesium.Color.RED);
     }
 }
+*/
 
 function create3DObject(basePolygon, height) {
     if (basePolygon.polygon.extrudedHeight == undefined) {

@@ -14,6 +14,12 @@ export default [
         ...globals.browser,
         bootstrap: "readonly"
       }
+    },
+    rules: {
+      "no-unused-vars": ["error", {
+        varsIgnorePattern: "^_",
+        argsIgnorePattern: "^_"
+      }]
     }
   }
 ];
