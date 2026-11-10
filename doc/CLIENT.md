@@ -28,3 +28,5 @@ The client is a Node.js/Vite application.
     npm run build
     npm run preview
     ```
+
+Cesium is installed from npm. The development and build commands automatically copy its required browser assets into generated directories; do not add a separate Cesium checkout under `client/vendor/`.
