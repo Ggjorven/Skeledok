@@ -1,11 +1,12 @@
 # Build & Run instructions for Server
 
-## Installation
+## Prerequisites
 
-1. Clone the repository:
+1. Open a terminal in the root of the cloned **Skeledok** directory.
+
+2. Navigate to the server directory:
     ```sh
-    git clone https://github.com/ggjorven/Skeledok.git
-    cd Skeledok/server
+    cd server
     ```
 
 ## Building
