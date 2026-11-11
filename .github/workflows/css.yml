@@ -6,11 +6,13 @@ on:
     paths:
       - .github/workflows/css.yml
       - client/styles/**
+      - client/.stylelintrc.json
   pull_request:
     branches: [ "main", "dev" ]
     paths:
       - .github/workflows/css.yml
       - client/styles/**
+      - client/.stylelintrc.json
 
 jobs:
   lint-stylelint:
