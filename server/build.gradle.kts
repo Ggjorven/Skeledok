@@ -3,8 +3,8 @@ plugins {
     id("application")
     id("eclipse")
 
-    id("org.springframework.boot") version "4.1.2"
-    id("io.spring.dependency-management") version "1.1.7"
+    id("org.springframework.boot") version "4.2.0"
+	id("io.spring.dependency-management") version "1.1.7"
 }
 
 java {
@@ -32,6 +32,11 @@ sourceSets {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+
+	runtimeOnly("org.postgresql:postgresql")
 
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
