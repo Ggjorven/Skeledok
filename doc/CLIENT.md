@@ -4,6 +4,9 @@ The client is a Node.js/Vite application.
 
 ## Prerequisites
 
+> [!IMPORTANT]
+> Make sure that you also installed all the prerequisites listed in the [main README](./../README.md).
+
 1. Open a terminal in the root of the cloned **Skeledok** directory.
 
 2. Navigate to the client directory:
