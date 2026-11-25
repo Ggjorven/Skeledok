@@ -13,14 +13,6 @@ on:
       - client/.eslintrc.mjs
   pull_request:
     branches: [ "main", "dev" ]
-    paths:
-      - .github/workflows/javascript.yml
-      - client/src/**
-      - client/tests/**
-      - client/package.json
-      - client/package-lock.json
-      - client/vite.config.js
-      - client/.eslintrc.mjs
 
 jobs:
   lint-codeql:

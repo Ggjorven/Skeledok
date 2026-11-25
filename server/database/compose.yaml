@@ -1,0 +1,10 @@
+services:
+  skeledok-db:
+    image: postgres:19
+    container_name: skeledok-db
+    environment:
+      - POSTGRES_USER=skeledok
+      - POSTGRES_PASSWORD=skeledok123!
+      - POSTGRES_DB=skeledok-db
+    ports:
+      - "5432:5432"

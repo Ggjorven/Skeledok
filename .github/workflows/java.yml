@@ -8,9 +8,6 @@ on:
       - server/**
   pull_request:
     branches: [ "main", "dev" ]
-    paths:
-      - .github/workflows/java.yml
-      - server/**
 
 jobs:
   lint-codeql:
