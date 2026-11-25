@@ -27,7 +27,7 @@ The client is a Node.js/Vite application.
     ```
     Then open the local URL printed by Vite (usually `http://localhost:5173`).  
 
-To create a production build run:
+(Optional) To create a production build run:
 ```sh
 npm run build
 npm run preview
