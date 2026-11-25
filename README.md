@@ -25,6 +25,7 @@ Ensure you have the following installed on your system:
 ### Building, Testing & Running
 
 The tool is split into a [client](./client/) and a [server](./server/). Build instructions can be found below:
+- All-in-one - [ALL-IN-ONE.md](./doc/ALL-IN-ONE.md)
 - Client - [CLIENT.md](./doc/CLIENT.md)
 - Server - [SERVER.md](./doc/SERVER.md)
 
