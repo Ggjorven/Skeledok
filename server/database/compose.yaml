@@ -1,0 +1,4 @@
+services:
+  skeledok-db:
+    build: ./
+    container_name: skeledok-db
