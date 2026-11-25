@@ -1,0 +1,15 @@
+services:
+  skeledok-llm:
+    image: ollama/ollama:0.40.16
+    container_name: skeledok-llm
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
