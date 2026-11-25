@@ -6,7 +6,7 @@ This file provides **Java 21** install instructions for several platforms, inclu
 
 To install **Java 21** on **Windows** follow these instructions:
 
-1. On **Windows** we utilize the installer, go to: [https://www.oracle.com/java/technologies/downloads/#jdk21-windows](https://www.oracle.com/java/technologies/downloads/#jdk21-windows)
+1. On **Windows** we utilize the installer, go to: [https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
 
 2. Scroll down to the **x64 Installer** and click on the download link.
 
