@@ -1,11 +1,11 @@
 spring:
   application:
-    name: les1
+    name: skeledok
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/lesdemo1
-    username: usernameTODO
-    password: passwordTODO
+    url: jdbc:postgresql://localhost:5432/skeledokdb
+    username: skeledok
+    password: skeledok123!
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
