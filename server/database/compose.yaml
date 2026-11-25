@@ -1,4 +1,8 @@
 services:
   skeledok-db:
-    build: ./
+    image: postgres:19
     container_name: skeledok-db
+    environment:
+      - POSTGRES_USER=skeledok
+      - POSTGRES_PASSWORD=skeledok123!
+      - POSTGRES_DB=skeledok-db
