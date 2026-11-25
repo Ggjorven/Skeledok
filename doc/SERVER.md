@@ -1,6 +1,6 @@
 # Build & Run instructions for Server
 
-The server is a Spring Boot application.
+The server is a Spring Boot application coupled with a database and a local LLM.
 
 ## Prerequisites
 
@@ -12,6 +12,23 @@ The server is a Spring Boot application.
 2. Navigate to the server directory:
     ```sh
     cd server
+    ```
+
+### Database
+
+1. Before we can start our Spring Boot server we must ensure that the database is up and running. To do so navigate to the database directory.
+    ```sh
+    cd database
+    ```
+
+2. Start the container:
+    ```sh
+    docker compose up -d
+    ```
+
+3. Now navigate back to the server:
+    ```sh
+    cd ..
     ```
 
 ## Building
