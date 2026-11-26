@@ -7,11 +7,11 @@ The server is a Spring Boot application coupled with a database and a local LLM.
 > [!IMPORTANT]
 > Make sure that you also installed all the prerequisites listed in the [main README](./../README.md).
 
-- An LLM Model - [Help](./Model-help.md)
-
 1. Open a terminal in the root of the cloned **Skeledok** directory.
 
-2. Navigate to the server directory:
+2. Install An LLM Model using [these instructions](./Model-help.md).
+
+3. Navigate to the server directory:
     ```sh
     cd server
     ```
