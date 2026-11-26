@@ -32,6 +32,8 @@ function setup() {
         selectionIndicator: false,
         shadows: true,
         shouldAnimate: true,
+        animation: false,
+        timeline: false
     });
 
     viewer.imageryLayers.removeAll();
