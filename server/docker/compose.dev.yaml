@@ -1,12 +1,35 @@
 services:
-  skeledok-rest-api-dev:
-    image: node:22-alpine
-    container_name: skeledok-rest-api-dev
+  # skeledok-rest-api-dev:
+  #   build:
+  #     context: ../
+  #     dockerfile: ./docker/Dockerfile
+  #   container_name: skeledok-rest-api-dev
+  #   ports:
+  #     - "5173:80"
+  #   restart: unless-stopped
+
+  skeledok-db-dev:
+    image: postgres:19
+    container_name: skeledok-db-dev
+    environment:
+      - POSTGRES_USER=skeledok
+      - POSTGRES_PASSWORD=skeledok123!
+      - POSTGRES_DB=skeledok-db-dev
+      - PGDATA=/data
     volumes:
-      - ..:/app:z
-      - ../node_modules_dev:/app/node_modules:z
-    ports:
-      - "5173:5173"
-    working_dir: /app
-    entrypoint: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+      - ./../database-dev:/data:z
+    # ports:
+    #   - "5432:5432"
+    restart: unless-stopped
+
+  skeledok-llm-dev:
+    image: ollama/ollama:latest
+    container_name: skeledok-llm-dev
+    environment:
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+    volumes:
+      - ./../models:/root/.ollama:z
+    # ports:
+    #   - "11434:11434"
     restart: unless-stopped
