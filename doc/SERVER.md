@@ -16,7 +16,9 @@ The server is a Spring Boot application coupled with a database and a local LLM.
 
 ### Database
 
-1. Before we can start our Spring Boot server we must ensure that the database is up and running. To do so navigate to the database directory.
+Before we can start our Spring Boot server we must ensure that the database is up and running.
+
+1. First navigate to the database directory.
     ```sh
     cd database
     ```
@@ -29,6 +31,25 @@ The server is a Spring Boot application coupled with a database and a local LLM.
 3. Now navigate back to the server:
     ```sh
     cd ..
+    ```
+
+### LLM
+
+We also need to have our ollama server up and running before starting Spring Boot.
+
+1. First navigate to the llm directory:
+    ```sh
+    cd llm
+    ```
+
+2. Start the container:
+    ```sh
+    docker compose up -d
+    ```
+
+3. Navigate back to the server folder:
+    ```sh
+    cd server
     ```
 
 ## Building
