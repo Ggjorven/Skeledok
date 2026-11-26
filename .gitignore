@@ -46,5 +46,7 @@ client/public/**
 **/.DS_Store
 
 # Docker data
-server/llm/models/
 client/node_modules_dev
+
+server/models/
+server/database/

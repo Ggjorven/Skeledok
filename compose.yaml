@@ -1,2 +1,3 @@
 include:
   - path: ./client/docker/compose.yaml
+  - path: ./server/docker/compose.yaml

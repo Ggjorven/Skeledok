@@ -1,0 +1,35 @@
+services:
+  # skeledok-rest-api:
+  #   build:
+  #     context: ../
+  #     dockerfile: ./docker/Dockerfile
+  #   container_name: skeledok-rest-api
+  #   ports:
+  #     - "5173:80"
+  #   restart: unless-stopped
+
+  skeledok-db:
+    image: postgres:19
+    container_name: skeledok-db
+    environment:
+      - POSTGRES_USER=skeledok
+      - POSTGRES_PASSWORD=skeledok123!
+      - POSTGRES_DB=skeledok-db
+      - PGDATA=/data
+    volumes:
+      - ./../database:/data:z
+    # ports:
+    #   - "5432:5432"
+    restart: unless-stopped
+
+  skeledok-llm:
+    image: ollama/ollama:latest
+    container_name: skeledok-llm
+    environment:
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+    volumes:
+      - ./../models:/root/.ollama
+    # ports:
+    #   - "11434:11434"
+    restart: unless-stopped

@@ -1,0 +1,12 @@
+services:
+  skeledok-rest-api-dev:
+    image: node:22-alpine
+    container_name: skeledok-rest-api-dev
+    volumes:
+      - ..:/app:z
+      - ../node_modules_dev:/app/node_modules:z
+    ports:
+      - "5173:5173"
+    working_dir: /app
+    entrypoint: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    restart: unless-stopped
