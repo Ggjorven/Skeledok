@@ -1,87 +1,73 @@
+CREATE TYPE weg_type_enum AS ENUM ('hoofdweg', 'zijweg', 'fietspad', 'voetpad');
 
-DROP DATABASE IF EXISTS skeledok-db;
-CREATE DATABASE skeledok-db;
-
-USE skeledok-db;
-
-CREATE TABLE Positie
+CREATE TABLE positie
 (
-    PositieID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    X DECIMAL(10, 3) NOT NULL,
-    Y DECIMAL(10, 3) NOT NULL,
-    Z DECIMAL(10, 3) NOT NULL
+    positie_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    x DECIMAL(10, 3) NOT NULL,
+    y DECIMAL(10, 3) NOT NULL,
+    z DECIMAL(10, 3) NOT NULL
 );
 
-CREATE TABLE Afmeting
+CREATE TABLE afmeting
 (
-    AfmetingID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Width   DECIMAL(10, 3) NOT NULL,
-    Height  DECIMAL(10, 3) NOT NULL,
-    Depth   DECIMAL(10, 3) NOT NULL,
-    --DimensionUnit VARCHAR(10) NOT NULL DEFAULT 'm'  -- 'mm', 'cm', 'm', 'in'
+    afmeting_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    width DECIMAL(10, 3) NOT NULL,
+    height DECIMAL(10, 3) NOT NULL,
+    depth DECIMAL(10, 3) NOT NULL
 );
 
-CREATE TABLE Gebouw
+CREATE TABLE gebouw
 (
-    GebouwID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    GebouwNaam VARCHAR(255) NOT NULL,
-    PositieID INT UNSIGNED NOT NULL,
-    AfmetingID INT UNSIGNED NOT NULL,
-    Model_Path VARCHAR(255) NUll,
-    Texture_Path VARCHAR(255) NULL,
+    gebouw_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    gebouw_naam VARCHAR(255) NOT NULL,
+    positie_id INT NOT NULL,
+    afmeting_id INT NOT NULL,
+    model_path VARCHAR(255) NUll,
+    texture_path VARCHAR(255) NULL,
     --Vertices
-    --Omschrijving VARCHAR(255), --TEXT
-    INDEX idx_gebouwnaam (GebouwNaam),
-    CONSTRAINT fk_gebouw_positie FOREIGN KEY (PositieID) REFERENCES Positie(PositieID),
-    CONSTRAINT fk_gebouw_afmeting FOREIGN KEY (AfmetingID) REFERENCES Afmeting(AfmetingID)
+    CONSTRAINT fk_gebouw_positie FOREIGN KEY (positie_id) REFERENCES positie(positie_id),
+    CONSTRAINT fk_gebouw_afmeting FOREIGN KEY (afmeting_id) REFERENCES afmeting(afmeting_id)
 );
+CREATE INDEX idx_gebouw_naam ON gebouw (gebouw_naam);
 
-CREATE TABLE Weg
+CREATE TABLE weg
 (
-    WegID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    WegNaam VARCHAR(255) NOT NULL,
-    PositieID INT UNSIGNED NOT NULL,
-    AfmetingID INT UNSIGNED NOT NULL,
-    Texture_Path VARCHAR(255) NULL,
-    WegType ENUM('hoofdweg','zijweg','fietspad','voetpad') NOT NULL,
-    --Omschrijving VARCHAR(255), --TEXT
+    weg_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    weg_naam VARCHAR(255) NOT NULL,
+    positie_id INT NOT NULL,
+    afmeting_id INT NOT NULL,
+    texture_path VARCHAR(255) NULL,
+    weg_type weg_type_enum NOT NULL,
 
-    INDEX idx_wegnaam (WegNaam),
-    CONSTRAINT fk_weg_positie  FOREIGN KEY (PositieID)  REFERENCES Positie(PositieID),
-    CONSTRAINT fk_weg_afmeting FOREIGN KEY (AfmetingID) REFERENCES Afmeting(AfmetingID)
+    CONSTRAINT fk_weg_positie  FOREIGN KEY (positie_id)  REFERENCES positie(positie_id),
+    CONSTRAINT fk_weg_afmeting FOREIGN KEY (afmeting_id) REFERENCES afmeting(afmeting_id)
 );
+CREATE INDEX idx_weg_naam ON weg (weg_naam);
 
-CREATE TABLE Planten
+CREATE TABLE planten
 (
-    PlantID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    PlantNaam VARCHAR(255) NOT NULL,
-    PositieID INT UNSIGNED NOT NULL,
-    AfmetingID INT UNSIGNED NOT NULL,
-    Model_Path VARCHAR(255) NUll,-- Misschien moet dit NOT NULL zijn. we gaan niet zelf een plant tekenen.
-    Texture_Path VARCHAR(255) NULL,
-    --Omschrijving VARCHAR(255), --TEXT
+    plant_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    plant_naam VARCHAR(255) NOT NULL,
+    positie_id INT NOT NULL,
+    afmeting_id INT NOT NULL,
+    model_path VARCHAR(255) NOT NUll,
+    texture_path VARCHAR(255) NULL,
 
-    INDEX idx_plantnaam (PlantNaam),
-    CONSTRAINT fk_plant_positie  FOREIGN KEY (PositieID)  REFERENCES Positie(PositieID),
-    CONSTRAINT fk_plant_afmeting FOREIGN KEY (AfmetingID) REFERENCES Afmeting(AfmetingID)
+    CONSTRAINT fk_plant_positie  FOREIGN KEY (positie_id)  REFERENCES positie(positie_id),
+    CONSTRAINT fk_plant_afmeting FOREIGN KEY (afmeting_id) REFERENCES afmeting(afmeting_id)
 );
+CREATE INDEX idx_plant_naam ON planten (plant_naam);
 
-CREATE TABLE AndereModellen -- kan straatlampen zijn of meer net als straatbanken, outdoor fitnessapparaten, kinderpark.
+CREATE TABLE andere_modellen -- kan straatlampen zijn of meer net als straatbanken, outdoor fitnessapparaten, kinderpark.
 (
-    ModelID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ModelNaam VARCHAR(255) NOT NULL,
-    PositieID INT UNSIGNED NOT NULL,
-    AfmetingID INT UNSIGNED NOT NULL,
-    Model_Path VARCHAR(255) NUll,
-    Texture_Path VARCHAR(255) NULL,
-    --Omschrijving VARCHAR(255), --TEXT
-    INDEX idx_modelnaam (ModelNaam),
-    CONSTRAINT fk_model_positie FOREIGN KEY (PositieID) REFERENCES Positie(PositieID),
-    CONSTRAINT fk_model_afmeting FOREIGN KEY (AfmetingID) REFERENCES Afmeting(AfmetingID)
+    model_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    model_naam VARCHAR(255) NOT NULL,
+    positie_id INT NOT NULL,
+    afmeting_id INT NOT NULL,
+    model_path VARCHAR(255) NUll,
+    texture_path VARCHAR(255) NULL,
+
+    CONSTRAINT fk_model_positie FOREIGN KEY (positie_id) REFERENCES positie(positie_id),
+    CONSTRAINT fk_model_afmeting FOREIGN KEY (afmeting_id) REFERENCES afmeting(afmeting_id)
 );
-
-
--- ALTER TABLE tabelnaam
---     ADD FOREIGN KEY (tabelnaam_wat) REFERENCES voor_welke_tabel(wat);
-
-
+CREATE INDEX idx_model_naam ON andere_modellen (model_naam);
