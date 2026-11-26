@@ -1,12 +1,55 @@
 # Build & Run instructions for Server
 
-The server is a Spring Boot application.
+The server is a Spring Boot application coupled with a database and a local LLM.
 
 ## Prerequisites
 
+> [!IMPORTANT]
+> Make sure that you also installed all the prerequisites listed in the [main README](./../README.md).
+
 1. Open a terminal in the root of the cloned **Skeledok** directory.
 
-2. Navigate to the server directory:
+2. Install An LLM Model using [these instructions](./Model-help.md).
+
+3. Navigate to the server directory:
+    ```sh
+    cd server
+    ```
+
+### Database
+
+Before we can start our Spring Boot server we must ensure that the database is up and running.
+
+1. First navigate to the database directory.
+    ```sh
+    cd database
+    ```
+
+2. Start the container:
+    ```sh
+    docker compose up -d
+    ```
+
+3. Now navigate back to the server:
+    ```sh
+    cd ..
+    ```
+
+### LLM
+
+We also need to have our ollama server up and running before starting Spring Boot.
+
+1. First navigate to the llm directory:
+    ```sh
+    cd llm
+    ```
+
+2. Start the container:
+    ```sh
+    docker compose up -d
+    ```
+
+3. Navigate back to the server folder:
     ```sh
     cd server
     ```

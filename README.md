@@ -17,15 +17,20 @@
 
 ### Prerequisites
 
+> [!IMPORTANT]
+> This is required for building, testing and running. So do this before you
+> try the instructions below.
+
 Ensure you have the following installed on your system:
-- Runtime: [Java JDK 21](./doc/Java-21-help.md)
+- Java JDK: [Java JDK 21](./doc/Java-21-help.md)
 - Client tooling: [Node.js](./doc/Node-help.md)
+- Containerization tools: [Docker](./doc/Docker-help.md)
 - Repository cloned (`git clone https://github.com/Ggjorven/Skeledok.git`)
 
 ### Building, Testing & Running
 
 The tool is split into a [client](./client/) and a [server](./server/). Build instructions can be found below:
-- All-in-one - [ALL-IN-ONE.md](./doc/ALL-IN-ONE.md)
+- All-in-one - [ALL-IN-ONE.md](./doc/ALL-IN-ONE.md) // TODO: ...
 - Client - [CLIENT.md](./doc/CLIENT.md)
 - Server - [SERVER.md](./doc/SERVER.md)
 
