@@ -47,4 +47,4 @@ client/public/**
 
 # Docker data
 server/llm/models/
-client/.docker-node_modules
+client/node_modules_dev
