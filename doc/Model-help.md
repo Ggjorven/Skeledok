@@ -18,33 +18,28 @@ Before this project can be run an LLM model must be downloaded. The repository d
 
 To download the model we'll start our ollama container and download a model through there.
 
-1. First navigate to the llm folder:
+1. In the server folder start the container:
     ```sh
-    cd llm
+    docker compose up -d skeledok-llm
     ```
 
-2. In that folder start the container:
-    ```sh
-    docker compose up -d
-    ```
-
-3. Now get into the shell of that container:
+2. Now get into the shell of that container:
     ```sh
     docker exec -it skeledok-llm bash
     ```
 
-4. Now pull a model, we use `gemma4:e4b`:
+3. Now pull a model, we use `gemma4:e4b`:
     ```sh
     ollama pull gemma4:e4b
     ```
 
-5. You can now check if the model is installed by running:
+4. You can now check if the model is installed by running:
     ```sh
     ollama list
     ```
     You should see your just installed model in that list.
 
-6. Finally exit the shell of the container:
+5. Finally exit the shell of the container:
     ```sh
     exit
     ```
