@@ -6,7 +6,7 @@ A lot of the parts of this application run through docker containers. So your sy
 
 On Windows you must install Docker with Docker Desktop.
 
-1. Navigate to [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/) and download the **Windows AMD64** version for x86_64 processors and **Windows AMR64** for ARM processors (duh).
+1. Navigate to [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/) and download the **Windows AMD64** version for x86_64 processors and **Windows ARM64** for ARM processors (duh).
 
 2. Then run the installer file and walk through all the steps. (Keep them default).
 
