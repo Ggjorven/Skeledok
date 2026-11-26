@@ -14,9 +14,12 @@ On Windows you must install Docker with Docker Desktop.
 
 ## Linux
 
-On Linux you have many options on how to install docker and all it's components. We'll be follow [these instructions](https://docs.docker.com/engine/install/).
+On Linux you have many options on how to install docker and all it's components. I have listed some major distributions and their respective instructions below:
+- **Debian** - [instructions](https://docs.docker.com/engine/install/debian/#installation-methods)
+- **Fedora** - [instructions](https://docs.docker.com/engine/install/fedora/#installation-methods)
+- **Arch** - [instructions](https://wiki.archlinux.org/title/Docker)
 
-1. TODO
+If your distribution is not listed here follow [these instructions](https://docs.docker.com/engine/install/).
 
 ## MacOS
 
