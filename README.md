@@ -22,8 +22,9 @@
 > try the instructions below.
 
 Ensure you have the following installed on your system:
-- Runtime: [Java JDK 21](./doc/Java-21-help.md)
+- Java JDK: [Java JDK 21](./doc/Java-21-help.md)
 - Client tooling: [Node.js](./doc/Node-help.md)
+- Containerization toolsl: [Docker](./doc/Docker-help.md)
 - Repository cloned (`git clone https://github.com/Ggjorven/Skeledok.git`)
 
 ### Building, Testing & Running
