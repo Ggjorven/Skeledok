@@ -1,9 +1,9 @@
 services:
-  skeledok-web-server:
+  skeledok-web-server-dev:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile
-    container_name: skeledok-web-server
+    container_name: skeledok-web-server-dev
     ports:
       - "5173:80"
     restart: unless-stopped
