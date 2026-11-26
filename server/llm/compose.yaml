@@ -1,6 +1,6 @@
 services:
   skeledok-llm:
-    image: ollama/ollama:0.40.16
+    image: ollama/ollama:latest
     container_name: skeledok-llm
     ports:
       - "11434:11434"
