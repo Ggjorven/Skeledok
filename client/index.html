@@ -11,6 +11,41 @@
     </head>
 
     <body style="margin: 0px; padding: 0px;">
-        <div id="cesiumContainer" style="margin: 0px; padding: 0px;"></div>
+        <div id="cesiumContainer" style="margin: 0px; padding: 0px;">
+            <!-- Button to open the chat window -->
+            <button id="openChatBtn" onclick="openChat()">Open Chat</button>
+
+            <!-- Chat Window -->
+            <div id="chatWindow" style="display: none">
+                <div id="chatHeader">
+                    <div id="colTitle">
+                        <h2>Skeledok Chat Bot</h2>
+                    </div>
+                    <div id="colBtns">
+                        <button id="minimizeBtn" onclick="minimizeChat()">—</button>
+                    </div>
+                </div>
+                <div id="chatMessages">
+                    <!--Dummy Data -->
+                    <div id="dummyMessage">
+                        <div id="userSection">John Doe</div>
+                        <div id="textSection">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</div>
+                    </div>
+                    <div id="dummyMessage2">
+                        <div id="userSection2">Jane Doe</div>
+                        <div id="textSection2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</div>
+                    </div>
+                </div>
+                <div id="chatFooter">
+                    <div id="chatInputBar">
+                        <form name="chatInput" method="post" action="/">
+                            <label for="chatInputTextArea" hidden="hidden">Input</label>
+                            <input id="chatInputTextArea" type="text" placeholder="Stel uw vraag..">
+                            <button id="chatSubmit" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -373,3 +373,15 @@ function create3DObject(basePolygon, height) {
     //Deze extrudedHeight komt heel goed van pas
     basePolygon.polygon.extrudedHeight *= 1.5;
 }
+
+const chatWindow = document.getElementById("chatWindow");
+const openChatBtn = document.getElementById("openChatBtn")
+window.minimizeChat = function minimizeChat() {
+    chatWindow.style.display = "none";
+    openChatBtn.style.display = "block";
+}
+
+window.openChat = function openChat() {
+    chatWindow.style.display = "block"
+    openChatBtn.style.display = "none";
+}
