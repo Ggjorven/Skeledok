@@ -48,6 +48,8 @@ client/public/**
 # Docker data
 client/node_modules_dev
 
+server/.gradle-cache
+
 server/models/
 server/database/
 server/database-dev/
