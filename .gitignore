@@ -50,3 +50,4 @@ client/node_modules_dev
 
 server/models/
 server/database/
+server/database-dev/

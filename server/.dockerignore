@@ -1,0 +1,15 @@
+.git
+
+.gradle
+build
+bin
+
+.idea
+.settings
+.classpath
+.project
+
+database
+database-dev
+
+models

@@ -1,12 +1,21 @@
 services:
-  # skeledok-rest-api-dev:
-  #   build:
-  #     context: ../
-  #     dockerfile: ./docker/Dockerfile
-  #   container_name: skeledok-rest-api-dev
-  #   ports:
-  #     - "5173:80"
-  #   restart: unless-stopped
+  skeledok-rest-api-dev:
+    image: eclipse-temurin:21-jdk
+    container_name: skeledok-rest-api-dev
+    volumes:
+      - ..:/app:z
+      - ../.gradle-cache:/root/.gradle:z
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://skeledok-db-dev:5432/skeledok-db-dev
+    ports:
+      - "8080:8080"
+    working_dir: /app
+    entrypoint: ["sh", "-c", "chmod +x gradlew && ./gradlew bootRun --no-daemon"]
+    depends_on:
+      skeledok-db-dev:
+        condition: service_healthy
+    restart: unless-stopped
 
   skeledok-db-dev:
     image: postgres:19
@@ -18,6 +27,11 @@ services:
       - PGDATA=/data
     volumes:
       - ./../database-dev:/data:z
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
     # ports:
     #   - "5432:5432"
     restart: unless-stopped
