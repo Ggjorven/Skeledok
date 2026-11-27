@@ -3,8 +3,18 @@ services:
     image: eclipse-temurin:21-jdk
     container_name: skeledok-rest-api-dev
     volumes:
-      - ..:/app:z
-      - ../.gradle-cache:/root/.gradle:z
+      - ../.container-cache/.gradle-root:/root/.gradle:z
+      - ../.container-cache/.gradle:/app/.gradle:z
+      - ../.container-cache/.gradle-cache:/app/.gradle-cache:z
+      - ../.container-cache/bin:/app/bin:z
+      - ../.container-cache/build:/app/build:z
+      - ../gradle:/app/gradle:z
+      - ../src:/app/src:z
+      - ../tests:/app/tests:z
+      - ../gradlew:/app/gradlew:z
+      - ../build.gradle.kts:/app/build.gradle.kts:z
+      - ../settings.gradle.kts:/app/settings.gradle.kts:z
+      - ../application-dev.yml:/app/application-dev.yml:z
     environment:
       - SPRING_PROFILES_ACTIVE=dev
       - SPRING_DATASOURCE_URL=jdbc:postgresql://skeledok-db-dev:5432/skeledok-db-dev
